@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+  <bean id="empRepository" class="com.gn.repository.EmpRepositoryImp"/>    
+  
+  <!--  setter injection  -->
+<!--   <bean id="empService" class="com.gn.service.EmpServiceImp">  -->
+<!--   	<property name="empRepository" ref="empRepository"/> -->
+<!--   </bean> -->
+
+	<!-- constructor injection -->
+	<bean id="empService" class="com.gn.service.EmpServiceImp" autowire="constructor">
+		<!-- <constructor-arg index="0" ref="empRepository"/>   commented as autowire takes cares of it-->
+	</bean>
+</beans>
